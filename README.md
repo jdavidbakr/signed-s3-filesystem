@@ -20,7 +20,13 @@ Once installed, add the following to your providers array in cofig/app.php:
 jdavidbakr\SignedS3Filesystem\SignedS3FilesystemServiceProvider::class,
 ```
 
-This package makes use of the AWS facade, so be sure you have the following set in your alias array:
+This package makes use of the AWS facade, so be sure you have the following set in your providers array:
+
+```
+Aws\Laravel\AwsServiceProvider::class,
+```
+
+as well as in your alias array:
 
 ```
 'AWS' => Aws\Laravel\AwsFacade::class,
