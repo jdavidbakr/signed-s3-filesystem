@@ -9,8 +9,8 @@ class SignedS3FilesystemAdapter extends AwsS3Adapter {
 
 	public function getUrl($path)
 	{
-		if(!empty($this->options['expires'])) {
-			$expire = \Carbon\Carbon::now()->addDays(2)->startOfDay()->timestamp;
+        if(!empty($this->options['expiration'])) {
+            $expire = \Carbon\Carbon::now()->addSeconds($this->options['expiration'])->timestamp;
 		} else {
 			$expire = \Carbon\Carbon::now()->addHours(2)->timestamp;
 		}
