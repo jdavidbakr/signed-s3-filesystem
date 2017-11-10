@@ -32,7 +32,7 @@ as well as in your alias array:
 'AWS' => Aws\Laravel\AwsFacade::class,
 ```
 
-You will also need to add the driver information to your config/filesystems.php file.  This driver uses the same info as the S3 driver, with an additional parameter for the length of time until the signed URL will expire.  If you do not specify an expiration time, URLs will default to expire 2 hours after being generated.
+You will also need to add the driver information to your config/filesystems.php file. This driver uses the same info as the S3 driver, with an additional parameter for the length of time until the signed URL will expire. If you do not specify an expiration time, URLs will default to expire 2 hours after being generated.
 
 ```
 's3-signed' => [
@@ -47,11 +47,11 @@ You will also need to add the driver information to your config/filesystems.php 
 ],
 ```
 
-Because the expirtation option is optional, and everything else acts the same as the standard S3 driver, you can alternatively just change the driver value of the existing s3 section to 's3-signed'.
+Because the expiration option is optional, and everything else acts the same as the standard S3 driver, you can alternatively just change the driver value of the existing s3 section to 's3-signed'.
 
 ## Usage
 
-Use this driver in the same manner as you would any other Laravel filesystem driver.  The Storage::url() command will return a signed URL.
+Use this driver in the same manner as you would any other Laravel filesystem driver. The Storage::url() command will return a signed URL.
 
 ``` php
 $signed_url = Storage::disk('s3-signed')->url('path-to-file');
