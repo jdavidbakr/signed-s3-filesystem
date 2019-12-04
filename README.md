@@ -1,3 +1,7 @@
+# Please use Storage::temporaryUrl() instead of this package
+
+As of Laravel 5.5, the `Storage` facade contains this functionality internally.  Therefore, it is recommended to sign your URLs according to the way Laravel intends.
+
 # signed-s3-filesystem
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
